@@ -190,3 +190,33 @@ a {
 a:hover, a:focus, a:active {
   color: #824027;
 }
+
+.my-star:before {
+  content: "\f005";
+  color : orange;
+  font-size : 10px;
+}
+
+.my-star-2:before {
+  content: "\f005\f005";
+  color : orange;
+  font-size : 10px;
+}
+
+.my-star-3:before {
+  content: "\f005\f005\f005";
+  color : orange;
+  font-size : 10px;
+}
+
+.my-star-4:before {
+  content: "\f005\f005\f005\f005";
+  color : orange;
+  font-size : 10px;
+}
+
+.my-star-5:before {
+  content: "\f005\f005\f005\f005\f005";
+  color : orange;
+  font-size : 10px;
+}

@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Main {
     private final static String excelFileName = "skills.xlsx";
-    private final static String htmlSnippet = "html.txt";
 
     public static void main(final String[] args) throws IOException {
         final File excelFile = findFile(new File(".").getAbsoluteFile());
@@ -25,9 +24,7 @@ public class Main {
         if (directory == null || !directory.isDirectory()) {
             throw new IllegalStateException("Can't find file " + excelFileName);
         }
-        System.out.println("Directory: " + directory.getAbsolutePath());
         final File maybeFile = new File(directory, excelFileName);
-        System.out.println("maybeFile: " + maybeFile.getAbsolutePath());
         if (maybeFile.isFile()) {
             return maybeFile;
         }

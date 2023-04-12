@@ -32,7 +32,7 @@ public class HtmlWriter {
                     writeln(writer, 4, "<div class=\"col\">");
                     writeln(writer, 5, "<ul class=\"fa-ul mb-0\">");
                     for (final Skill skill : skillLine) {
-                        writeln(writer, 6, "<li>" + skill.name() + " (" + "*".repeat((int) skill.level()) + ")</li>");
+                        writeln(writer, 6, "<li>" + skill.name() + " &nbsp;&nbsp;<span class = \"fa my-star-" + skill.level() + "\"></span>" + "</li>");
                     }
                     writer.write("");
                     writer.write("");
