@@ -8,7 +8,7 @@ public class Main {
     private final static String excelFileName = "skills.xlsx";
 
     public static void main(final String[] args) throws IOException {
-        final File excelFile = findFile(new File(".").getAbsoluteFile());
+        final File excelFile = FileUtils.findFile(excelFileName);
 
         final List<Category> categories = new Parser().parseFile(excelFile);
         System.out.println(categories);
@@ -18,17 +18,6 @@ public class Main {
 
         new WordWriter(categories).writeToWord();
         System.out.println("Add the word content into the word document");
-    }
-
-    private static File findFile(final File directory) {
-        if (directory == null || !directory.isDirectory()) {
-            throw new IllegalStateException("Can't find file " + excelFileName);
-        }
-        final File maybeFile = new File(directory, excelFileName);
-        if (maybeFile.isFile()) {
-            return maybeFile;
-        }
-        return findFile(directory.getParentFile());
     }
 
 }
