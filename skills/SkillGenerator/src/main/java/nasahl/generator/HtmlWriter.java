@@ -1,7 +1,6 @@
 package nasahl.generator;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,20 +10,16 @@ import java.util.stream.IntStream;
 
 public class HtmlWriter {
 
-    private final static String indexFileName = "index.html";
+    private final SkillData data;
 
-    private final List<Category> categories;
-
-    HtmlWriter(final List<Category> categories) {
-        this.categories = categories;
+    HtmlWriter(final SkillData data) {
+        this.data = data;
     }
 
     void writeToHtml() throws IOException {
-        final File indexFile = new File("target/" + indexFileName);
-        final BufferedWriter writer = new BufferedWriter(new FileWriter(indexFile));
+        final BufferedWriter writer = new BufferedWriter(new FileWriter(FileConstants.indexFile));
 
-        final File originalIndexFile = FileUtils.findFile(indexFileName);
-        final List<String> fileLines = Files.readAllLines(originalIndexFile.toPath());
+        final List<String> fileLines = Files.readAllLines(FileConstants.originalIndexFile.toPath());
 
         final String skillStartTag = "Skill content - Start";
         final String skillEndTag = "Skill content - End";
@@ -47,12 +42,12 @@ public class HtmlWriter {
         }
 
         writer.close();
-        System.out.println("Modified index file written to " + indexFile.getAbsolutePath());
+        System.out.println("Modified index file written to " + FileConstants.indexFile.getAbsolutePath());
     }
 
     private void writeSkills(final BufferedWriter writer) throws IOException {
         writeln(writer, 0, "");
-        for (final Category category : categories) {
+        for (final Category category : data.skills()) {
             if (category.isVisible()) {
                 writeln(writer, 0, "");
                 writeln(writer, 3, "<div class=\"subheading mb-3\">" + category.name() + "</div>");
@@ -62,12 +57,15 @@ public class HtmlWriter {
                     for (final Skill skill : skillLine) {
                         writeln(writer, 4, "<div class=\"col-xl-4\">" + skill.name() + " &nbsp;&nbsp;<span class = \"fa my-star-" + skill.level() + "\"></span>" + "</div>");
                     }
-                    writeln(writer, 3, "</div>");
-                    writeln(writer, 0, "");
+                    writeln(writer, 2, "</div>");
+                    writeln(writer, 2, "");
                 }
                 writeln(writer, 3, "<p></p>");
             }
         }
+        writeln(writer, 0, "");
+        writeln(writer, 3, "<div class=\"small mt-5\">aktualisiert: " + data.refreshDate() + "</div>");
+        writeln(writer, 3, "<a href=\""+FileConstants.excelFileName+"\" class=\"small\">Download im Excelformat</a>");
         writeln(writer, 0, "");
     }
 

@@ -1,4 +1,3 @@
 package nasahl.generator;
 
-record Skill(String name, long level, boolean isVisible) {
-}
+record Skill(String name, long level, boolean isVisible) {}
