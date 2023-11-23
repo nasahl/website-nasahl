@@ -1,0 +1,10 @@
+Sinnvolle Fragen, die ich während eines Interviews stellen kann:
+
+- wird im Team im Pairing gearbeitet? Oder werden permanente Reviews durchgeführt?
+
+- gibt es zusätzliche QoS (Quality of Services)? Z.B Sonar/Codestyle, TestCoverage ...
+
+- gibt es regelmässige Meetings für einen technischen Austausch zwischen den Entwicklern?
+
+- wie ist der Entwicklungsprozess? Scrum? Kanban?
+
