@@ -1,0 +1,11 @@
+Sehr geehrte Damen und Herren,
+
+ich interessiere mich für das Projekt, da es sich im Wesentlichen mit meinen aktuellen Qualifikationen deckt.
+So bin ich seit vielen Jahren als Softwareentwickler tätig. Die letzten Jahre in der Backend- und Fullstackentwicklung im Bereich Java/Kotlin mit SpringBoot für Microservices.
+
+Dabei wesentlich ist auch die Umsetzung von Tests auf allen Ebenen. Vom Unittest bis zu Integrations- und Systemtests mit SpringBootTests, Cucumber und - falls eine Frontend vorhanden ist - Seleniumtests.
+
+Ich freue mich auf eine Rückmeldung von Ihnen.
+
+Mit freundlichen Grüßen
+Christof Nasahl
